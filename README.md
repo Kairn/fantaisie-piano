@@ -3,7 +3,7 @@
 [![made-with-cpp](https://img.shields.io/badge/made%20with-C%2B%2B-yellowgreen.svg)](https://isocpp.org)
 [![MIT Licence](https://img.shields.io/apm/l/vim-mode.svg)](https://opensource.org/licenses/mit-license.php)
 
-Fantaisie Piano is a virtual piano program that simulates the functions of a real piano by playing prerecorded sounds in response to the user's keyboard or mouse inputs. The program features all 88 keys of a standard piano with a sustain pedal function. Moreover, it comes with a Music Box that can digitally perform piano pieces that are coded into the file. At the time of this writing, only two pieces are ready to be played, but I will continuously add more pieces in the future. The program is written in C++ language with Simple DirectMedia Layer and some of its supportive libraries.
+Fantaisie Piano is a virtual piano program that simulates the functions of a real piano by playing prerecorded sounds in response to the user's keyboard or mouse inputs. The program features all 88 keys of a standard piano with a sustain pedal function. Moreover, it comes with a Music Box that can digitally perform piano pieces that are coded into the file. At the time of this writing, only two pieces are ready to be played, but I will continuously add more pieces in the future. The program is written in **C++** language (not C) with Simple DirectMedia Layer and some of its supportive libraries.
 
 ## Getting Started
 ### Prerequisites
