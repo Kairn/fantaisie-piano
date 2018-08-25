@@ -306,6 +306,7 @@ std::vector<int> fpActionQueue;
 // set up piano key queues
 std::vector<int> fpPlayQueue;
 std::vector<int> fpFadeQueue;
+std::vector<Note> fpChordQueue;
 
 // define the function for initializing SDL
 bool initSDL()
@@ -1120,20 +1121,44 @@ bool startLoop()
 					{
 						if (fpSheet[fpNextNote].toplay)
 						{
-							if (Mix_FadingChannel(fpSheet[fpNextNote].name) == MIX_FADING_OUT)
+							int chord_time = fpSheet[fpNextNote].time;
+							bool chord_continue = true;
+							// build chord notes before playing them
+							while (chord_continue)
 							{
-								Mix_HaltChannel(fpSheet[fpNextNote].name);
+								fpChordQueue.push_back(fpSheet[fpNextNote]);
+								if (fpSheet[fpNextNote + 1].toplay && fpSheet[fpNextNote + 1].time == chord_time)
+								{
+									fpNextNote += 1;
+								}
+								else
+								{
+									for (Note ni : fpChordQueue)
+									{
+										if (Mix_FadingChannel(ni.name) == MIX_FADING_OUT)
+										{
+											Mix_HaltChannel(ni.name);
+										}
+										Mix_Volume(ni.name, ni.volume);
+									}
+									for (Note ni : fpChordQueue)
+									{
+										Mix_PlayChannel(ni.name, fpNoteSounds[ni.name], 0);
+									}
+									fpChordQueue.clear();
+									chord_continue = false;
+									fpNextNote += 1;
+								}
 							}
-							Mix_Volume(fpSheet[fpNextNote].name, fpSheet[fpNextNote].volume);
-							Mix_PlayChannel(fpSheet[fpNextNote].name, fpNoteSounds[fpSheet[fpNextNote].name], 0);
 						}
-						else if (!fpSheet[fpNextNote].toplay && Mix_Playing(fpSheet[fpNextNote].name))
+						else
 						{
-							Mix_FadeOutChannel(fpSheet[fpNextNote].name, 600);
+							if (Mix_Playing(fpSheet[fpNextNote].name))
+							{
+								Mix_FadeOutChannel(fpSheet[fpNextNote].name, 600);
+							}
+							fpNextNote += 1;
 						}
-
-						// increment the next note
-						fpNextNote += 1;
 					}
 				}
 				// time change
@@ -1164,7 +1189,7 @@ bool startLoop()
 				// end piece
 				else
 				{
-					SDL_Delay(1000);
+					SDL_Delay(2000);
 					fpHalted = true;
 					Mix_HaltChannel(-1);
 				}
@@ -1174,6 +1199,7 @@ bool startLoop()
 				{
 					if (fpEvent.type == SDL_QUIT)
 					{
+						fpHalted = true;
 						fpActive = false;
 						fpState = -1;
 						fpSuccess = true;
