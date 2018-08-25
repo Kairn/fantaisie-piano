@@ -5,7 +5,7 @@ OBJS = fpMain.cxx fpClasses.cxx
 CC = g++
 
 #COMPILER_FLAGS COMPILATION OPTIONS
-COMPILER_FLAGS = -w
+COMPILER_FLAGS = -w -std=c++11
 
 #LINKERS LIBRARIES
 LINKER_FLAGS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
