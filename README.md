@@ -54,6 +54,7 @@ The Music Box in Fantaisie Piano is essentially a digital performance system. In
 You can access the Music Box by clicking on the **"Music Box"** button on the start screen which will direct you to a screen with a list of piano pieces. Clicking on a piece title will direct you to the playing screen of the piece you selected. The piece is not played automatically until you click on the **"Play/Pause"** button on the button right corner, and you can pause/resume the playing by clicking on the same button. Clicking on the **"Stop"** button will halt the playing entirely, and the piece will be played from the beginning when you start the playing again.
 
 ### List of Available Pieces
+* ***Fantaisie-Impromptu*** (Chopin) **NEW!!**
 * ***Für Elise*** (Beethoven)
 * ***Clair de Lune*** (Debussy)
 
@@ -61,7 +62,7 @@ You can access the Music Box by clicking on the **"Music Box"** button on the st
 **Other titles on the selection screen are the ones I have planned to add in the future.*
 
 ### :musical_score: *Progress Updates* :notes:
-I am currently working on Chopin's ***Fantaisie-Impromptu***, after which the program is named, and I also consider it to be the lead piece of the entire set. This composition is fairly complex in terms of its frequent changes in tempo and dynamics, overall length and note variety, and key modulation. It is no easy task to code the "right" interpretation and make it sound as natural as a virtuoso pianist's performance, but I like a challenge.
+Chopin's *Fantaisie-Impromptu* has been finished ahead of schedule. The next piece I will work on is *Liebestraum No. 3* by Liszt. I imagine this will take a fair amount of time to interpret, compile, and polish, but it should be finished before mid September unless I get really busy due to personal reasons.
 
 ## Acknowledgments
 The sound files used in Fantaisie Piano are provided by **Ivy Audio** in their publicly available *Piano in 162* library.
