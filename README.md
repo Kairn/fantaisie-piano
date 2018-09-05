@@ -63,7 +63,7 @@ You can access the Music Box by clicking on the **"Music Box"** button on the st
 **Other titles on the selection screen are the ones I have planned to add in the future.*
 
 ### :musical_score: *Progress Updates* :notes:
-*Liebestraum* No.3 is now in the playable collection! I will start working on Bach's Prelude in C and Brahms' Lullaby in the next a few days. Both pieces are fairly short and are likely to come out soon.
+*Liebestraum* No.3 is now in the playable collection! I will start working on Bach's *Prelude in C* and *Brahms' Lullaby* in the next a few days. Both pieces are fairly short and are likely to come out soon.
 
 ## Acknowledgments
 The sound files used in Fantaisie Piano are provided by **Ivy Audio** in their publicly available *Piano in 162* library.
